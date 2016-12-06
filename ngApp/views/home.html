@@ -2,3 +2,16 @@
 <p>
     {{controller.message}}
 </p>
+<form ng-submit="controller.loginUser()">
+    <label>username</label>
+    <input type="text" ng-model="controller.username"/>
+    <button type="submit">login</button>
+    </form>
+
+<ul>
+    <li ng-repeat="player in controller.nflplayers">
+   <pre> {{player | json:2}}</pre>
+
+        
+    </li>
+</ul>
