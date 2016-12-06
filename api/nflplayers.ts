@@ -4,7 +4,7 @@ import nflplayer from '../models/nflplayers'
 
  router.get('/nflplayer',function(req, res, next){
      nflplayer.find().then((players)=> {
-         res.send(players);
+         res.json(players);
 
      })
  })

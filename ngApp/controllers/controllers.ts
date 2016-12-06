@@ -13,7 +13,8 @@ namespace imdbcrud.Controllers {
 
             
             $http.get('/api/nflplayer').then((res)=>{
-                this.nflplayers = res;
+                this.nflplayers = res.data;
+                console.log(res);
             })
         }
         
