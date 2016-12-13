@@ -12,26 +12,32 @@ import login from './routes/login';
 import * as mongoose from 'mongoose';
 import Pokemon from './models/pokemon';
 import nflplayers from './models/nflplayers';
+import nbaplayers from './models/nbaplayers';
 let app = express();
-mongoose.connect('mongodb://coder:camps@ds119578.mlab.com:19578/marquis').then(()=>{
+mongoose.connect('mongodb://coder:camps@ds119578.mlab.com:19578/marquis')
+.then(()=>{
   console.log('Connected YAY');
   
-    nflplayers.create({
-    name:"marquis",
-    position:"mackdaddy",
-    number:7
-  }).then(()=>{
-    console.log("i made a PLAYER");
+  // // nflplayers.create({
+  //   name:"marquis",
+  //   position:"mackdaddy",
+  //   number:7
+  // }).then(()=>{
+  //   console.log("i made a PLAYER");
   
 
-  }).catch ((err)=> {
-    console.log(err);
+  // }).catch ((err)=> {
+  //   console.log(err);
     
-  });
+  // });
 
+  // nbaplayers.create({
+  //   name:"marquis",
+  //   position:"Shooting Guard",
+  //   number:7
+  // })
 
-
-}).catch ((err)=> {
+ }).catch ((err)=> {
   console.log(err);
   
 });
@@ -47,6 +53,7 @@ mongoose.connect('mongodb://coder:camps@ds119578.mlab.com:19578/marquis').then((
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use('/api', require('./api/nflplayers'));
+app.use('/api', require('./api/nbaplayers'));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));

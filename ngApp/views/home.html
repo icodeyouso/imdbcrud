@@ -10,8 +10,16 @@
 
 <ul>
     <li ng-repeat="player in controller.nflplayers">
-   <pre> {{player | json:2}}</pre>
-
+   
+<h1>{{player.name}}</h1>
+<h3>{{player.position}}</h3>
+<h3>{{player.number}}</h3>
         
+   </li>
+</ul>
+
+<ul>
+    <li ng-repeat="player in controller.nbaplayers">
+        <pre> {{player | json:4}}</pre>
     </li>
 </ul>

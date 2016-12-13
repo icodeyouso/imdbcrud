@@ -3,6 +3,7 @@ namespace imdbcrud.Controllers {
     export class HomeController {
         public pokemons;
         public nflplayers;
+        public nbaplayers;
         public message = 'Hello from the home page!';
         public loginUser (){
         //    this.$http.post('/login').then((res)=>{
@@ -16,7 +17,11 @@ namespace imdbcrud.Controllers {
                 this.nflplayers = res.data;
                 console.log(res);
             })
-        }
+            $http.get('/api/nbaplayers').then((res)=>{
+                this.nbaplayers = res.data;
+                console.log(res);
+            })
+        }   
         
      }
         
