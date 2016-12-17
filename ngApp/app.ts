@@ -1,6 +1,6 @@
 namespace imdbcrud {
 
-    angular.module('imdbcrud', ['ui.router', 'ngResource', 'ui.bootstrap']).config((
+    angular.module('imdbcrud', ['ngMaterial', 'ui.router', 'ngResource']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider

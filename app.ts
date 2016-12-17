@@ -12,35 +12,30 @@ import login from './routes/login';
 import * as mongoose from 'mongoose';
 import Pokemon from './models/pokemon';
 import nflplayers from './models/nflplayers';
-import nbaplayers from './models/nbaplayers';
+import NbaPlayer from './models/nbaplayers';
 let app = express();
-mongoose.connect('mongodb://coder:camps@ds119578.mlab.com:19578/marquis')
-.then(()=>{
-  console.log('Connected YAY');
-  
-  // // nflplayers.create({
-  //   name:"marquis",
-  //   position:"mackdaddy",
-  //   number:7
-  // }).then(()=>{
-  //   console.log("i made a PLAYER");
-  
-
-  // }).catch ((err)=> {
-  //   console.log(err);
-    
-  // });
-
-  // nbaplayers.create({
-  //   name:"marquis",
-  //   position:"Shooting Guard",
-  //   number:7
-  // })
-
- }).catch ((err)=> {
-  console.log(err);
-  
-});
+mongoose.connect('mongodb://coder:coder@ds157677.mlab.com:57677/moviesdb')
+    .then(()=>{
+      // mongoose.connection.db.dropdatabase().then(()=>{
+        console.log('Connected YAY');
+        NbaPlayer.create({
+          career:{averagePoints:29.5, averageRebounds:10.7, averageAssists:4},
+          name:"marquis",
+          position:"mackdaddy",
+          logo:"http://2.bp.blogspot.com/-ETTTbHzS9Xs/VkoyY2k_nII/AAAAAAAACpA/M-tqB5Ef-bg/s1600/nba_finals_1990_trail_blazers_vs_pistons_by_devildog360-d51j8i1.jpg",
+          number:7,
+          image:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/1990NBAFinals.png/225px-1990NBAFinals.png"
+        }).then(()=>{
+          console.log("i made a PLAYER");
+        }).catch ((err)=> {
+          console.log(err);
+        });
+      // }).catch((err)=>{
+      //   console.log(err);
+      // })
+    }).catch ((err)=> {
+      console.log(err); 
+    });
 
 
 //report DB error

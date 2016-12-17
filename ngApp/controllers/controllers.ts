@@ -5,11 +5,14 @@ namespace imdbcrud.Controllers {
         public nflplayers;
         public nbaplayers;
         public message = 'Hello from the home page!';
-        public loginUser (){
+        public loginUser;
+        public f;
+        public errFile;
+        public errorMsg
         //    this.$http.post('/login').then((res)=>{
             // console.log(res);
             // })
-        }
+        
         constructor(private $http:ng.IHttpService){
 
             

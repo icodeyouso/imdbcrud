@@ -1,25 +1,39 @@
 <h2>Home</h2>
 <p>
-    {{controller.message}}
+  {{controller.message}}
 </p>
 <form ng-submit="controller.loginUser()">
-    <label>username</label>
-    <input type="text" ng-model="controller.username"/>
-    <button type="submit">login</button>
-    </form>
-
-<ul>
-    <li ng-repeat="player in controller.nflplayers">
+  <label>username</label>
+  <input type="text" ng-model="controller.username" />
+  <md-button type="submit">login</md-button>
+</form>
+<div>
+  <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-xs="50" layout="column" layout="row">
+      <md-card ng-repeat="player in  controller.nbaplayers">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{player.name}}</span>
+            <span class="md-subhead">Extra Large</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="space-between">
+          <div class="md-media-lg card-media">
+            <img src="{{player.logo}}"/>
+          </div>
+          <md-card-actions layout="column">
+            <i class="material-icons">&#xE87C;</i>
+            <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+              <!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Settings">
+              <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>-->
+          </md-card-actions>
+        </md-card-content>
+      </md-card>
+    </div>
    
-<h1>{{player.name}}</h1>
-<h3>{{player.position}}</h3>
-<h3>{{player.number}}</h3>
-        
-   </li>
-</ul>
-
-<ul>
-    <li ng-repeat="player in controller.nbaplayers">
-        <pre> {{player | json:4}}</pre>
-    </li>
-</ul>
