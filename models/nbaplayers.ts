@@ -1,9 +1,10 @@
 import * as mongoose from 'mongoose';
 
-export interface INbacareer {
-    averagePoints:number,
-    averageRebounds:number,
-    averageAssists:number
+export interface INbaseries {
+    team:String,
+    result:number,
+    location:number,
+    series:number
 }
 
 export interface INbaplayer extends mongoose.Document {
@@ -12,12 +13,14 @@ export interface INbaplayer extends mongoose.Document {
     logo:String,
     number:number,
     image:String,
-    career:INbacareer
+    series:INbaseries
 }
-let careerSchema = new mongoose.Schema({
-    averagePoints:Number,
-    averageRebounds:Number,
-    averageAssists:Number
+let seriesSchema = new mongoose.Schema({
+    team:String,
+    result:Number,
+    location:Number,
+    series:Number
+    
 })
 let schema = new mongoose.Schema({
     name:String,
@@ -25,7 +28,7 @@ let schema = new mongoose.Schema({
     logo:String,
     number:{type:Number},
     image:String,
-    career:careerSchema
+    series:seriesSchema
 })
 
 export default mongoose.model<INbaplayer>('NbaPlayer',schema);

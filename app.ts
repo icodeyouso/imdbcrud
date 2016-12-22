@@ -19,10 +19,10 @@ mongoose.connect('mongodb://coder:coder@ds157677.mlab.com:57677/moviesdb')
       // mongoose.connection.db.dropdatabase().then(()=>{
         console.log('Connected YAY');
         NbaPlayer.create({
-          career:{averagePoints:29.5, averageRebounds:10.7, averageAssists:4},
+          series:{team:"https://lh3.googleusercontent.com/5M_Zz657Zy7XPiPDm-9ftFd2gGYxR7ajNODqf8dZvtfaz1p1T1CJ-zEhrIjMcV2TIjeXgA=s86", result:29.5, location:10.7, series:4},
           name:"marquis",
           position:"mackdaddy",
-          logo:"http://2.bp.blogspot.com/-ETTTbHzS9Xs/VkoyY2k_nII/AAAAAAAACpA/M-tqB5Ef-bg/s1600/nba_finals_1990_trail_blazers_vs_pistons_by_devildog360-d51j8i1.jpg",
+          logo:"http://thumbs4.ebaystatic.com/d/l225/m/mHOYz0gUfPzcSdCmmZsbKDg.jpg",
           number:7,
           image:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/1990NBAFinals.png/225px-1990NBAFinals.png"
         }).then(()=>{

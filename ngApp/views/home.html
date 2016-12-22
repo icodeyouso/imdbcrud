@@ -7,24 +7,41 @@
   <input type="text" ng-model="controller.username" />
   <md-button type="submit">login</md-button>
 </form>
-<div>
-  <md-content class="md-padding" layout-xs="column" layout="row">
-    <div flex-xs flex-xs="50" layout="column" layout="row">
-      <md-card ng-repeat="player in  controller.nbaplayers">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">{{player.name}}</span>
-            <span class="md-subhead">Extra Large</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content layout="row" layout-align="space-between">
-          <div class="md-media-lg card-media">
-            <img src="{{player.logo}}"/>
-          </div>
-          <md-card-actions layout="column">
-            <i class="material-icons">&#xE87C;</i>
-            <!--<md-button class="md-icon-button" aria-label="Favorite">-->
-              <!--<md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+<md-content flex class="md-padding">
+  <md-card flex="50" ng-repeat="player in  controller.nbaplayers">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">{{player.name}}</span>
+        <span class="md-subhead">Extra Large</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="row" layout-align="space-between">
+      <div class="md-media-xl card-media">
+        <img src="{{player.logo}}" />
+      </div>
+    </md-card-content>
+    <md-card-content layout="row">
+      <md-table-container>
+        <table md-table>
+          <thead md-head>
+            <tr>
+              <th ng-repeat="(key,value) in player.series" md-column md-numeric>{{key}}</th>
+            </tr>
+          </thead>
+          <tbody md-body>
+            <tr md-row>
+              <td ng-repeat="(key,value) in player.series" md-cell>
+                <span ng-if="key==='team'"><img src="{{value}}" class="md-avatar"></span>
+                <span ng-if="key!=='team'">{{value}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </md-table-container>
+      <md-card-actions layout="column">
+        <i class="material-icons">&#xE87C;</i>
+        <!--<md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
             </md-button>
             <md-button class="md-icon-button" aria-label="Settings">
               <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
@@ -32,8 +49,22 @@
             <md-button class="md-icon-button" aria-label="Share">
               <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
             </md-button>-->
-          </md-card-actions>
-        </md-card-content>
-      </md-card>
-    </div>
-   
+      </md-card-actions>
+    </md-card-content>
+  </md-card>
+</md-content>
+<!--<ul>
+      <li ng-repeat="player in controller.nbaplayers">
+        <h1>{{player.name}}</h1>
+        <h3>{{player.position}}</h3>
+        <h3>{{player.career.averagePoints}}</h3>
+        <img height="200" ng-src="{{player.logo}}"/>
+        <h3>{{player.number}}</h3>
+        <img height="400" ng-src="{{player.image}}"/>
+      </li>
+    </ul>
+    <ul>
+      <li ng-repeat="player in controller.nbaplayers">
+        <pre> {{player | json:4}}</pre>
+      </li>
+    </ul>-->

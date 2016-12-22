@@ -1,6 +1,6 @@
 namespace imdbcrud {
 
-    angular.module('imdbcrud', ['ngMaterial', 'ui.router', 'ngResource']).config((
+    angular.module('imdbcrud', ['ngMaterial', 'ui.router', 'ngResource', 'md.data.table']).config((
         $stateProvider: ng.ui.IStateProvider,
         $urlRouterProvider: ng.ui.IUrlRouterProvider,
         $locationProvider: ng.ILocationProvider
